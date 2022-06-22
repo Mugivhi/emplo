@@ -29,39 +29,38 @@ function Registration(){
 
         };
         if(employeeDetails.name===""){
-           alert('make sure every field is filled')
+           alert('name cant be empty')
          
         }else if(!letters.test(name)){
             alert('Name field requiregitd only alphabet characters')
         }
         else if(employeeDetails.surname===""){
-           alert('make sure every field is filled')
+           alert('surname cant be empty')
           
         }
         else if(!letters.test(surname)){
             alert('surname field requiregitd only alphabet characters')}
         else if(employeeDetails.regNO===""){
-           alert('make sure every field is filled')
+           alert('registration no cant be empty')
           
         }else if(employeeDetails.phone===""){
-           alert('make sure every field is filled')
+           alert('phone no cant be empty')
           
         }else if(employeeDetails.phone.length <10 ||  employeeDetails.phone.length >10){
             alert('contact no must be 10')
         }
-        else if(employeeDetails.regNO===""){
-           alert('make sure every field is filled')
+        
           
-        }else if(employeeDetails.image===""){
-          alert('make sure every field is filled')
+          else if(employeeDetails.image===""){
+          alert('image cant be empty')
          
         }
         else if(employeeDetails.date===''){
-           alert('make sure every field is filled')
+           alert('date cant be empty')
           
         }
         else if(employeeDetails.email===''){
-            alert('make sure every field is filled')
+            alert('email cant be empty')
           
         }else if(!filter.test(email)){
             alert('incorrect email format')
@@ -94,15 +93,8 @@ function Registration(){
 
     function handleSubmit(e){
         e.preventDefault();
-        if(!name || !image || !surname || !regNO || !phone || !email || !password){
-           alert('make sure every field is filled');
-        }else if(name && image && surname && regNO  && phone && email && password){
-            setLogin(!login)
-        }
-        else{ 
-           console.log('saved in local storage');
-           setLogin(!login)
-        }
+        alert('account created, you can use your previous details to login now')
+        setLogin(!login)
     }
     function handleClick(){
        setLogin(login)
