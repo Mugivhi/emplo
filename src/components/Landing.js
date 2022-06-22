@@ -10,11 +10,13 @@ function Landing(){
                 {user.map((user, index)=>{
                     return(
                         <div className="table">
-                            <span>name:<p>erfergdgfd</p></span>
+                            <span>photo:<br></br><img src={user.image}></img></span>
+                            <span>name:<p>{user.name}</p></span>
                             <span>surname:<p>{user.surname}</p></span>
+                            <span>regNo:<p>{user.regNO}</p></span>
                             <span>Email:<p>{user.email}</p></span>
                             <span>contactNo:<p>{user.phone}</p></span>
-                            <span>Time:<p>{user.date}</p></span>
+                            <span>Date & time:<p>{user.date}</p></span>
                         </div>
                     )
                 })}

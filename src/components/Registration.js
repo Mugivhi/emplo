@@ -4,8 +4,8 @@ function Registration(){
     const[name, setName]=useState('')
     const[surname, setSurname]=useState('')
     const[regNO, setRegno]=useState('')
-    const[date, setDate]=useState('')
-    const[image,setImg]=useState('')
+    const[date]=useState('')
+    const[image,setPic]=useState('')
     const[phone, setPhone]=useState('')
     const[email, setEmail]=useState('')
     const[password, setPassword]=useState('')
@@ -21,7 +21,7 @@ function Registration(){
             surname:surname,
             regNO:regNO,
             date:date,
-            image:image,
+            image:localStorage.getItem('image'),
             phone:phone,
             email:email,
             password:password,
@@ -107,6 +107,14 @@ function Registration(){
     function handleClick(){
        setLogin(login)
     }
+    function setImge(image){
+        const imgPath = document.querySelector("#userImg1").files[0];
+        const reader = new FileReader();
+        reader.addEventListener("load", function() {
+            localStorage.setItem('image', reader.result);
+        }, false);
+        reader.readAsDataURL(imgPath);
+    }
 
     return(
         <div>
@@ -130,7 +138,7 @@ function Registration(){
                 </div>
                 <div className='the-fields'>
                     <label>image:</label>
-                    <input type='file' accept="image/png ,image/jpg" className='form-control' onChange={(event)=>setImg(event.target.value)}/>
+                    <input type='file' accept="image/png ,image/jpg" className='form-control img' id='userImg1' onChange={(event)=>setPic  (setImge(event.target.value))}/>
                 </div>
                
                 <div className='the-fields'>
